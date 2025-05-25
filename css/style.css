@@ -1,0 +1,105 @@
+body {
+    justify-items: center;
+    background-color: antiquewhite;
+    font-family: monospace;
+}
+
+main {
+    padding: 24px;
+    border-radius: 8px;
+    background-color: azure;
+}
+
+input[type=number],
+textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    border: 0px;
+    padding: 8px;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.rumus-content {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Global Usage */
+.padding-medium {
+    padding: 16px;
+}
+
+.bg-lightseagreen {
+    background-color: lightseagreen;
+}
+
+.bg-lightcoral {
+    background-color: lightcoral;
+}
+
+.bg-lightblue {
+    background-color: lightblue;
+}
+
+/* Global Usage */
+
+/* Switch ON/OFF Styling */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+    vertical-align: middle;
+    margin-left: 12px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px; width: 20px;
+    left: 4px; bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(22px);
+}
+
+/* Label di samping switch */
+.switch-label {
+    margin-left: 8px;
+    vertical-align: middle;
+    font-weight: bold;
+    font-family: monospace;
+}
