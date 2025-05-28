@@ -10,6 +10,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let isReversed = false;
 
+    input.addEventListener("input", function () {
+        // Hapus karakter non-angka, kecuali - dan .
+        let cleanValue = this.value.replace(/[^0-9.\-]/g, '');
+
+        // Batas maksimal 10 karakter
+        if (cleanValue.length > 10) {
+            cleanValue = cleanValue.slice(0, 10);
+        }
+        this.value = cleanValue;
+    });
+
     function convertTemperature() {
         const value = parseFloat(input.value);
         if (isNaN(value)) {
