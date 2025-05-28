@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         detail.value = explanation;
+
     }
 
     convertBtn.addEventListener("click", convertTemperature);
@@ -44,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
         output.value = "";
         detail.value = "";
     });
-
+    //fungsi untuk reverse button
     reverseBtn.addEventListener("click", () => {
         isReversed = !isReversed;
 
@@ -61,6 +62,28 @@ document.addEventListener("DOMContentLoaded", () => {
             outputLabel.textContent = "Fahrenheit (°F):";
         }
 
+        // Tukar isi input dan output
+        const tempInputValue = input.value;
+        input.value = output.value;
+        output.value = tempInputValue;
+
         convertTemperature(); // langsung konversi ulang setelah dibalik
     });
+    
+    //menghapus hasil klo dihapus
+    input.addEventListener("input", () => {
+    const value = input.value.trim();
+        
+        if (value === "") {
+            output.value = "";
+            detail.value = "";
+            return; // Jangan lanjut konversi kalau kosong
+        }
+        
+        if (output.value !== "") {
+            convertTemperature();
+        }
+
+    });
+
 });
