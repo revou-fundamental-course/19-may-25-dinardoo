@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
             detail.value = "";
             return;
         }
-
+                
         let result, explanation;
         if (!isReversed) {
             result = (value * 9 / 5) + 32;
@@ -33,11 +33,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    convertBtn.addEventListener("click", convertTemperature);
+    //convertBtn.addEventListener("click", convertTemperature);
+    convertBtn.addEventListener("click", () => {
+    if (input.value.trim() === "") {
+        alert("Masukkan suhu terlebih dahulu");
+        return;
+    }
+    convertTemperature();
+});
+
     input.addEventListener("input", () => {
         if (autoSwitch.checked) {
             convertTemperature();
         }
+        
     });
 
     resetBtn.addEventListener("click", () => {
@@ -45,10 +54,10 @@ document.addEventListener("DOMContentLoaded", () => {
         output.value = "";
         detail.value = "";
     });
-    //fungsi untuk reverse button
+
+    //untuk reverse button
     reverseBtn.addEventListener("click", () => {
         isReversed = !isReversed;
-
         const inputLabel = document.getElementById("input-label");
         const outputLabel = document.querySelector("label[for='hasil-suhu']");
 
@@ -70,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
         convertTemperature(); // langsung konversi ulang setelah dibalik
     });
     
-    //menghapus hasil klo dihapus
+    //menghapus hasil 
     input.addEventListener("input", () => {
     const value = input.value.trim();
         
